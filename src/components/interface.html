@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <button class="btn btn-primary" v-on:click="showNewUserModal"> Add new User ... </button>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>Id</th>
+              <th>Name</th>             
+              <th>CNIC</th>
+              <th>Designation</th>
+              <th>Salary</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr v-for="(user,index) in users">
+              <td>{{index+1}}</td>
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.cnic}}</td>
+              <td>{{user.designation}}</td>
+              <td>{{user.salary}}</td>
+              <td>
+                  <button class="btn btn-danger" v-on:click="removeUser(user,index)">Remove</button>
+                  <button class="btn btn-default" v-on:click="showEditModal(user,index)">Edit</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</html>
